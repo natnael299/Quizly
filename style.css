@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.container {
+  height: 509px;
+  width: 550px;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px black;
+}
+
+.container h2 {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  color: aliceblue;
+}
+
+.infoGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: inherit;
+  margin-top: 10px;
+}
+
+.infoGrid .topic {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 5px 7px;
+  border-radius: 2px;
+}
+
+.infoGrid .questionNum {
+  background-color: white;
+  color: black;
+  margin-right: 10px;
+  font-weight: bold;
+  padding: 5px 7px;
+  border-radius: 2px;
+}
+
+.container .question {
+  background-color: #1a1a1a;
+  color: white;
+  margin-top: 20px;
+  padding: 17px;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+.container .options {
+  width: inherit;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.options .option {
+  background-color: bisque;
+  padding: 16px 0px 16px 20px;
+  display: flex;
+  text-align: center;
+  margin-right: 50px;
+  margin-left: 50px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+
+.container button {
+  background-color: rgb(203, 17, 17);
+  border: none;
+  color: white;
+  margin-top: 20px;
+  width: 150px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  height: 37px;
+}
+
+.container .progressBar {
+  width: inherit;
+  height: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 11px;
+}
+
+.progressBar .progress {
+  width: 78%;
+  background-color: darkorange;
+  height: inherit;
+  border-radius: inherit;
+}
