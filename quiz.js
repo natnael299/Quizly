@@ -10,18 +10,23 @@ const amount = 20;
 const category = 10;
 const difficulty = "easy";
 const type = "multiple";
+let questionsArray = [];
 let questionCount = 0;
+
+init();
+async function init() {
+  await answer(amount, category, difficulty, type);
+  displayQuestions(questionsArray[questionCount], questionsArray.length);
+}
 
 async function answer(a, c, d, t) {
   const URLBASE = `https://opentdb.com/api.php?amount=${a}&category=${c}&difficulty=${d}&type=${t}`;
   const response = await fetch(`${URLBASE}`);
   const result = await response.json();
   const questions = result.results;
-  //console.log(questions[questionCount]);
-  displayQuestions(questions[questionCount], questions.length);
+  questionsArray = questions;
+  console.log(questionsArray);
 }
-
-answer(amount, category, difficulty, type);
 
 function displayQuestions(question, totalQLength) {
   let options = question.incorrect_answers;
@@ -34,7 +39,7 @@ function displayQuestions(question, totalQLength) {
     <div class="infoGrid">
       <p class="topic">Topic: ${question.category}</p>
       <div class="questionNum">
-        <span>${count + 1}</span> of <span>${totalQLength}</span>
+        <span>${questionCount + 1}</span> of <span>${totalQLength}</span>
       </div>
     </div>
     <div class="question">${question.question}</div>
@@ -52,7 +57,7 @@ function displayQuestions(question, totalQLength) {
   document.querySelector(".nextBtn").addEventListener("click", () => {
     questionCount += 1;
     if (questionCount === totalQLength) { console.log("Done"); }
-    else { answer(amount, category, difficulty, type) };
+    else { displayQuestions(questionsArray[questionCount], questionsArray.length); };
   });
 }
 
