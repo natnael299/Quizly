@@ -16,13 +16,33 @@ img {
 
 .container {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #252525;
 }
 
-.container .category {
+.container h2 {
+  color: white;
+  margin-top: 25px;
+  font-size: 1.8rem;
+}
+
+.container h3 {
+  color: white;
+  margin-top: 25px;
+  font-size: 1.4rem;
+}
+
+.subjectContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: 20px;
+
+}
+
+.subjectContainer .category {
   height: 340px;
   width: 279px;
   margin-top: 30px;
@@ -35,6 +55,12 @@ img {
   background-color: rgba(137, 43, 226, 0.824);
   margin-left: 15px;
   margin-bottom: 15px;
+  transform: perspective(500px) translateZ(0);
+  transition: all 0.25s ease-in-out;
+}
+
+.subjectContainer .category:hover {
+  transform: perspective(500px) translateZ(20px);
 }
 
 .category .img_container {
@@ -50,7 +76,7 @@ img {
   font-size: 1.37rem;
 }
 
-.container .details {
+.subjectContainer .details {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,6 +94,10 @@ img {
   border: none;
 }
 
+.details select:hover {
+  box-shadow: 0px 0px 4px red;
+}
+
 .category button {
   margin-top: 20px;
   border: none;
@@ -79,14 +109,18 @@ img {
   border-radius: 5px;
 }
 
+.category button:hover {
+  box-shadow: 0px 0px 8px white;
+}
+
 @media (max-width:670px) {
-  .container {
+  .subjectContainer {
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     row-gap: 10px;
   }
 
-  .container .category {
+  .subjectContainer .category {
     height: 340px;
     width: 239px;
     margin-left: 5px;
@@ -105,13 +139,13 @@ img {
 }
 
 @media (min-width:671px) and (max-width:810px) {
-  .container {
+  .subjectContainer {
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     row-gap: 10px;
   }
 
-  .container .category {
+  .subjectContainer .category {
     height: 340px;
     width: 279px;
     margin-top: 30px;
@@ -126,13 +160,13 @@ img {
 }
 
 @media (min-width:811px) and (max-width:950px) {
-  .container {
+  .subjectContainer {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 10px;
     row-gap: 10px;
   }
 
-  .container .category {
+  .subjectContainer .category {
     width: 219px;
   }
 

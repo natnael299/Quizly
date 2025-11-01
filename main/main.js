@@ -1,87 +1,87 @@
 const categories = [
   {
     name: "Television",
-    img: "categories_image/tv.svg"
+    img: "../categories_image/tv.svg"
   },
   {
     name: "Books",
-    img: "categories_image/books.svg"
+    img: "../categories_image/books.svg"
   },
   {
     name: "Board Games",
-    img: "categories_image/board_game.svg"
+    img: "../categories_image/board_game.svg"
   },
   {
     name: "Art",
-    img: "categories_image/art.svg"
+    img: "../categories_image/art.svg"
   },
   {
     name: "Animals",
-    img: "categories_image/animals.svg"
+    img: "../categories_image/animals.svg"
   },
   {
     name: "Computers",
-    img: "categories_image/computers.svg"
+    img: "../categories_image/computers.svg"
   },
   {
     name: "Geography",
-    img: "categories_image/geo.svg"
+    img: "../categories_image/geo.svg"
   },
   {
     name: "General Knowledge",
-    img: "categories_image/general.svg"
+    img: "../categories_image/general.svg"
   },
   {
     name: "Anime",
-    img: "categories_image/Anime.svg"
+    img: "../categories_image/Anime.svg"
   },
   {
     name: "Maths",
-    img: "categories_image/maths.svg"
+    img: "../categories_image/maths.svg"
   },
   {
     name: "Video Games",
-    img: "categories_image/video_games.svg"
+    img: "../categories_image/video_games.svg"
   },
   {
     name: "Vehicels",
-    img: "categories_image/vehicels.svg"
+    img: "../categories_image/vehicels.svg"
   },
   {
     name: "Science",
-    img: "categories_image/science.svg"
+    img: "../categories_image/science.svg"
   },
   {
     name: "Politics",
-    img: "categories_image/politics.svg"
+    img: "../categories_image/politics.svg"
   },
   {
     name: "Mythology",
-    img: "categories_image/myth.svg"
+    img: "../categories_image/myth.svg"
   },
   {
     name: "Music",
-    img: "categories_image/music_2.svg"
+    img: "../categories_image/music_2.svg"
   },
   {
     name: "Gadgets",
-    img: "categories_image/gadgets.svg"
+    img: "../categories_image/gadgets.svg"
   },
   {
     name: "Films",
-    img: "categories_image/films.svg"
+    img: "../categories_image/films.svg"
   },
   {
     name: "Celebrities",
-    img: "categories_image/celebrities.svg"
+    img: "../categories_image/celebrities.svg"
   },
   {
     name: "Musicals",
-    img: "categories_image/musicals.svg"
+    img: "../categories_image/musicals.svg"
   }
 ];
 
-const container = document.querySelector(".container");
+const container = document.querySelector(".subjectContainer");
 
 let html = "";
 categories.forEach((categorie) => {
