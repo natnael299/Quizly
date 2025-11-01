@@ -10,17 +10,139 @@ body {
   align-items: center;
 }
 
+img {
+  height: 205px;
+}
+
 .container {
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-left: 20px;
+  background-color: #252525;
 }
 
 .container .category {
-  height: 210px;
-  width: 199px;
-  margin-left: 30px;
+  height: 340px;
+  width: 279px;
   margin-top: 30px;
-  background-color: aqua;
+  box-shadow: 0px 0px 3px blueviolet;
   display: flex;
   flex-direction: column;
+  padding: 6px;
   align-items: center;
+  border-radius: 9px;
+  background-color: rgba(137, 43, 226, 0.824);
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.category .img_container {
+  background-color: black;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.category h3 {
+  color: black;
+  font-weight: bold;
+  margin-top: 12px;
+  font-size: 1.37rem;
+}
+
+.container .details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.details select {
+  height: 30px;
+  border-radius: 5px;
+  padding: 3px 4px;
+  background-color: rgba(137, 43, 226, 0.719);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.category button {
+  margin-top: 20px;
+  border: none;
+  width: 248px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+@media (max-width:670px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .container .category {
+    height: 340px;
+    width: 239px;
+    margin-left: 5px;
+    margin-top: 30px;
+    padding: 6px;
+  }
+
+  .details select {
+    font-size: 0.8rem;
+
+  }
+
+  .category button {
+    width: 148px;
+  }
+}
+
+@media (min-width:671px) and (max-width:810px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .container .category {
+    height: 340px;
+    width: 279px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 3px blueviolet;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    align-items: center;
+    border-radius: 9px;
+    background-color: rgba(137, 43, 226, 0.824);
+  }
+}
+
+@media (min-width:811px) and (max-width:950px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .container .category {
+    width: 219px;
+  }
+
+  .details select {
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+
+  .category button {
+    width: 208px;
+  }
+
 }
