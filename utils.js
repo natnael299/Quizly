@@ -1,26 +1,27 @@
-export const triviaCategories = {
-  9: "General Knowledge",
-  10: "Entertainment: Books",
-  11: "Entertainment: Film",
-  12: "Entertainment: Music",
-  13: "Entertainment: Musicals & Theatres",
-  14: "Entertainment: Television",
-  15: "Entertainment: Video Games",
-  16: "Entertainment: Board Games",
-  17: "Science & Nature",
-  18: "Science: Computers",
-  19: "Science: Mathematics",
-  20: "Mythology",
-  21: "Sports",
-  22: "Geography",
-  23: "History",
-  24: "Politics",
-  25: "Art",
-  26: "Celebrities",
-  27: "Animals",
-  28: "Vehicles",
-  29: "Entertainment: Comics",
-  30: "Science: Gadgets",
-  31: "Entertainment: Japanese Anime & Manga",
-  32: "Entertainment: Cartoon & Animations"
+export const choice_array = JSON.parse(localStorage.getItem("multiple")) || [
+  {
+    name: "Television",
+    id: 14,
+    level: "easy",
+    format: "multiple"
+  }
+];
+
+save_to_storage_multi();
+export function save_to_storage_multi() {
+  localStorage.setItem("multiple", JSON.stringify(choice_array));
+};
+
+export const boolean_array = JSON.parse(localStorage.getItem("boolean")) || [
+  {
+    name: "Television",
+    id: 14,
+    level: "easy",
+    format: "boolean"
+  }
+];
+
+save_to_storage_bool();
+export function save_to_storage_bool() {
+  localStorage.setItem("boolean", JSON.stringify(boolean_array));
 };

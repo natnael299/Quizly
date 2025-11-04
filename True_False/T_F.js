@@ -1,12 +1,17 @@
+import { boolean_array } from "../utils.js";
+
 const questionsGrid = document.querySelector(".questionsGrid");
 const questionsContainer = document.querySelector(".questions-js");
 const container = document.querySelector(".container");
 const notFound = document.querySelector(".notFound");
 
 let questionsArray = [];
-async function fetchQuestions() {
+const amount = 10;
+const categorie = 9;
+const level = boolean_array[0].level;
+async function fetchQuestions(a, c, d) {
   try {
-    const URLBASE = `https://.com/api.php?amount=10&category=9&difficulty=easy&type=boolean`;
+    const URLBASE = `https://opentdb.com/api.php?amount=${a}&category=${c}&difficulty=${d}&type=boolean`;
     const response = await fetch(`${URLBASE}`);
     const result = await response.json();
     console.log(result.results);
@@ -43,7 +48,7 @@ function displayQuestions(array) {
 };
 
 async function init() {
-  questionsArray = await fetchQuestions();
+  questionsArray = await fetchQuestions(amount, categorie, level);
   displayQuestions(questionsArray)
 };
 init();

@@ -1,4 +1,4 @@
-import { triviaCategories } from "../utils.js";
+import { save_to_storage_multi, choice_array } from "../utils.js";
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1)); // random index 0 ≤ j ≤ i
@@ -8,8 +8,8 @@ function shuffle(array) {
 }
 
 const amount = 20;
-const category = 10;
-const difficulty = "easy";
+const category = choice_array[0].id;
+const difficulty = choice_array[0].level;
 const type = "multiple";
 let questionsArray = [];
 let questionCount = 0;
@@ -53,7 +53,7 @@ function displayQuestions(question, totalQLength) {
       <div class="progress"></div>
     </div>
   `;
-  console.log(document.querySelector(".nextBtn"));
+
   document.querySelector(".container").innerHTML = html;
   document.querySelector(".nextBtn").addEventListener("click", () => {
     questionCount += 1;
