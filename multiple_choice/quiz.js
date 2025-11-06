@@ -5,7 +5,7 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];   // swap elements
   }
   return array;
-}
+};
 
 const amount = 20;
 const category = choice_array[0].id;
@@ -14,11 +14,12 @@ const type = "multiple";
 let questionsArray = [];
 let questionCount = 0;
 let score = 0;
+
 init();
 async function init() {
   await answer(amount, category, difficulty, type);
   displayQuestions(questionsArray[questionCount], questionsArray.length);
-}
+};
 
 async function answer(a, c, d, t) {
   const URLBASE = `https://opentdb.com/api.php?amount=${a}&category=${c}&difficulty=${d}&type=${t}`;
@@ -27,7 +28,7 @@ async function answer(a, c, d, t) {
   const questions = result.results;
   questionsArray = questions;
   console.log(questionsArray);
-}
+};
 
 function displayQuestions(question, totalQLength) {
   let options = question.incorrect_answers;
@@ -53,14 +54,16 @@ function displayQuestions(question, totalQLength) {
       <div class="progress"></div>
     </div>
   `;
-
   document.querySelector(".container").innerHTML = html;
   document.querySelector(".nextBtn").addEventListener("click", () => {
     questionCount += 1;
     if (questionCount === totalQLength) { console.log("Done"); }
     else { displayQuestions(questionsArray[questionCount], questionsArray.length); };
+    const progressBar = document.querySelector(".progress");
+    const width = (questionCount / totalQLength) * 100;
+    progressBar.style.width = `${width}%`;
   });
-}
+};
 
 function displayOptions(options, correctAnswer) {
   let html = "";
