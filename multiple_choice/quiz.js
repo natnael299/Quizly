@@ -1,4 +1,4 @@
-import { save_to_storage_multi, choice_array } from "../utils.js";
+import { choice_array } from "../utils.js";
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1)); // random index 0 ≤ j ≤ i
@@ -13,7 +13,7 @@ const difficulty = choice_array[0].level;
 const type = "multiple";
 let questionsArray = [];
 let questionCount = 0;
-
+let score = 0;
 init();
 async function init() {
   await answer(amount, category, difficulty, type);
@@ -34,7 +34,7 @@ function displayQuestions(question, totalQLength) {
   const Answer = question.correct_answer;
   options.push(Answer);
   options = shuffle(options);
-  const optionGrid = displayOptions(options);
+  const optionGrid = displayOptions(options, Answer);
   const html = `
     <h2>Quizly</h2>
     <div class="infoGrid">
@@ -62,12 +62,35 @@ function displayQuestions(question, totalQLength) {
   });
 }
 
-function displayOptions(options) {
+function displayOptions(options, correctAnswer) {
   let html = "";
   options.forEach((option) => {
     html += `
         <div class="option">${option}</div>
     `;
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("option")) {
+      const selectedAnswer = e.target.innerHTML;
+      const options = document.querySelectorAll(".option");
+
+      if (selectedAnswer !== correctAnswer) {
+        e.target.classList.add("incorrect");
+        options.forEach((option) => {
+          const currentAnswer = option.innerHTML;
+          if (currentAnswer === correctAnswer) {
+            option.classList.add("correct");
+          } else { option.classList.add("unanswered"); };
+        });
+      } else {
+        e.target.classList.add("correct");
+        score += 1;
+        options.forEach((option) => {
+          option.classList.add("unanswered");
+        });
+      };
+    };
   });
   return html;
 };
