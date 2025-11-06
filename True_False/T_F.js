@@ -8,6 +8,7 @@ let questionsArray = [];
 const amount = 10;
 const categorie = 9;
 const level = boolean_array[0].level;
+let score = 0;
 async function fetchQuestions(a, c, d) {
   try {
     const URLBASE = `https://opentdb.com/api.php?amount=${a}&category=${c}&difficulty=${d}&type=boolean`;
@@ -29,13 +30,15 @@ function displayQuestions(array) {
     let html = "";
     array.forEach((question) => {
       html += `<div class="question">
-      <div class="currentQ"> ${question.question}</div>     
-          <select class="answerPlate" data-correct-answer="${question.correct_answer}">
-            <option value="">----T/F----</option>
-            <option value="True">True</option>
-            <option value="False">False</option>
-          </select>
-        </div>
+                <div class="currentQ"> 
+                  <p>${question.question}</p>
+                  <select class="answerPlate" data-correct-answer="${question.correct_answer}">
+                    <option value="">----T/F----</option>
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                  </select>
+                </div>       
+              </div>
      `;
     });
     questionsContainer.innerHTML = html;
@@ -43,13 +46,11 @@ function displayQuestions(array) {
     displayBtn.onclick = () => {
       answerPlate.forEach((plate) => {
         const answer = plate.value;
-
-        console.log(answer);
         const correctAnswer = plate.dataset.correctAnswer;
-        console.log(correctAnswer);
         if (answer == correctAnswer) {
-          plate.classList.add("correct");
-        } else { plate.classList.add("incorrect"); };
+          plate.parentElement.classList.add("correct");
+          score += 1;
+        } else { plate.parentElement.classList.add("incorrect"); };
       });
     };
   }
