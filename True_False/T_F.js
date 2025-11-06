@@ -2,9 +2,8 @@ import { boolean_array } from "../utils.js";
 
 const questionsGrid = document.querySelector(".questionsGrid");
 const questionsContainer = document.querySelector(".questions-js");
-const container = document.querySelector(".container");
+const displayBtn = document.querySelector(".displayBtn");
 const notFound = document.querySelector(".notFound");
-
 let questionsArray = [];
 const amount = 10;
 const categorie = 9;
@@ -31,15 +30,28 @@ function displayQuestions(array) {
     array.forEach((question) => {
       html += `<div class="question">
       <div class="currentQ"> ${question.question}</div>     
-          <select>
+          <select class="answerPlate" data-correct-answer="${question.correct_answer}">
             <option value="">----T/F----</option>
-            <option value="">True</option>
-            <option value="">False</option>
+            <option value="True">True</option>
+            <option value="False">False</option>
           </select>
         </div>
      `;
     });
     questionsContainer.innerHTML = html;
+    const answerPlate = document.querySelectorAll(".answerPlate");
+    displayBtn.onclick = () => {
+      answerPlate.forEach((plate) => {
+        const answer = plate.value;
+
+        console.log(answer);
+        const correctAnswer = plate.dataset.correctAnswer;
+        console.log(correctAnswer);
+        if (answer == correctAnswer) {
+          plate.classList.add("correct");
+        } else { plate.classList.add("incorrect"); };
+      });
+    };
   }
   else {
     notFound.classList.remove("hide");
@@ -52,3 +64,4 @@ async function init() {
   displayQuestions(questionsArray)
 };
 init();
+
