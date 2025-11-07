@@ -61,6 +61,9 @@ body {
 .container .question {
   background-color: #1a1a1a;
   color: white;
+  display: flex;
+  text-align: center;
+  width: 97%;
   margin-top: 20px;
   padding: 14px;
   font-size: 0.98rem;
@@ -86,6 +89,10 @@ body {
   margin-left: 50px;
   border-radius: 10px;
   font-weight: 800;
+}
+
+.options .option:hover {
+  border: 2px solid lightsteelblue;
 }
 
 .options .option.incorrect {
@@ -127,4 +134,17 @@ body {
   background-color: darkorange;
   height: inherit;
   border-radius: inherit;
+}
+
+@media (max-width:700px) {
+  .container {
+    width: 530px;
+  }
+
+  .container .question {
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 0.98rem;
+    width: 97%;
+  }
 }

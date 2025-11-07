@@ -35,7 +35,7 @@ body {
 }
 
 .questionsGrid h2:first-child {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .questionsGrid .header {
@@ -44,7 +44,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 7px;
 }
 
 .questionsGrid .topic {
@@ -63,7 +63,7 @@ body {
 
 .questionsGrid .questions {
   width: inherit;
-  margin-top: 39px;
+  margin-top: 10px;
   padding-top: 12px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -95,8 +95,13 @@ body {
   padding: 5px 7px;
   border: none;
   outline: none;
-  box-shadow: 0px 0px 8px blue;
   border-radius: 5px;
+
+}
+
+
+.currentQ:hover {
+  border: 1px solid lightblue;
 }
 
 .currentQ p {
@@ -135,7 +140,13 @@ body {
   font-weight: bolder;
   width: 300px;
   border-radius: 6px;
-  margin: 18px 0;
+  margin: 10px 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.questionsGrid .displayBtn:hover {
+  color: deeppink;
+  background-color: black;
 }
 
 .container .notFound {
@@ -166,4 +177,11 @@ body {
 
 .container .notFound.hide {
   display: none;
+}
+
+@media (max-width: 700px) {
+  .container {
+    height: 600px;
+    width: 540px;
+  }
 }
