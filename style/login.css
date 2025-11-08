@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #252525;
+  height: 450px;
+  width: 540px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px blue;
+}
+
+.container .link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  width: 52%;
+  border: 1px solid black;
+  border-top-right-radius: 140px;
+  border-bottom-right-radius: 140px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  background-color: blueviolet;
+  color: white;
+  font-weight: bolder;
+}
+
+.link h2 {
+  margin-top: 150px;
+  margin-bottom: 10px;
+}
+
+.link h2 span {
+  color: rgb(0, 208, 255);
+  font-weight: 900;
+  font-size: 1.6rem;
+}
+
+.link a {
+  color: rgb(0, 208, 255);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.container .registrationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  width: 48%;
+  color: white;
+}
+
+.registrationForm form {
+  display: flex;
+  height: inherit;
+  width: inherit;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+form input {
+  width: 240px;
+  height: 36px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+}
+
+form input:hover {
+  box-shadow: 0px 0px 8px rgb(0, 208, 255);
+}
+
+form input::placeholder {
+  padding-left: 12px;
+}
+
+form .reg {
+  background-color: rgb(0, 208, 255);
+  color: #fff;
+  font-weight: bolder;
+}
