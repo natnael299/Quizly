@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="link">
+      <h2>Welcome!!</h2>
+      <p>Not registered?</p>
+      <a href="auth.php">Register</a>
+    </div>
+    <div class="registrationForm">
+      <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+        <input type="text" name="email" class="email" placeholder="email">
+        <input type="password" name="password" class="pass" placeholder="password">
+        <input type="submit" value="Login" name="reg">
+      </form>
+
+      <?php
+      $dbserver = "localhost";
+      $dbusername = "root";
+      $dbpassword = "";
+      $dbname = "chatify";
+      $conn = new mysqli($dbserver, $dbusername, $dbpassword, $dbname);
+      if (isset($_POST["reg"])) {
+        $email = isset($_POST["email"]) ? $_POST["email"] : "";
+        $password = isset($_POST["password"]) ? $_POST["password"] : "";
+
+        if (!empty($email) || !empty($password)) {
+          $sql = "SELECT * FROM chatifyTB WHERE email='$email'";
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              if (password_verify($password, $row["pass"])) {
+                header("Location: index.html");
+              } else {
+                echo "Wrong Username or Password";
+              };
+            };
+          };
+        } else {
+          echo "Fill the form correctly!!";
+        };
+      };
+
+      ?>
+    </div>
+  </div>
+</body>
+
+</html>

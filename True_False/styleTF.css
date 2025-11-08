@@ -35,7 +35,7 @@ body {
 }
 
 .questionsGrid h2:first-child {
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 .questionsGrid .header {
@@ -44,7 +44,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 7px;
+  margin-top: 5px;
 }
 
 .questionsGrid .topic {
@@ -52,10 +52,12 @@ body {
   padding: 7px 7px;
   margin-left: 15px;
   border-radius: 5px;
+  font-size: 0.9rem;
 }
 
 .questionsGrid .questionNum {
   margin-right: 15px;
+  font-size: 0.9rem;
   background-color: #252525;
   padding: 7px 7px;
   border-radius: 5px;
@@ -63,7 +65,7 @@ body {
 
 .questionsGrid .questions {
   width: inherit;
-  margin-top: 10px;
+  margin-top: 5px;
   padding-top: 12px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -71,6 +73,10 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.questionsGrid .questions::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
 }
 
 .questions .question {
@@ -101,7 +107,7 @@ body {
 
 
 .currentQ:hover {
-  border: 1px solid lightblue;
+  box-shadow: 0 0 8px lightblue;
 }
 
 .currentQ p {

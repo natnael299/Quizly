@@ -4,6 +4,8 @@ const questionsGrid = document.querySelector(".questionsGrid");
 const questionsContainer = document.querySelector(".questions-js");
 const displayBtn = document.querySelector(".displayBtn");
 const notFound = document.querySelector(".notFound");
+const category = document.querySelector(".topic");
+const questionL = document.querySelector(".questionNum");
 let questionsArray = [];
 const amount = 10;
 const categorie = 9;
@@ -42,6 +44,8 @@ function displayQuestions(array) {
      `;
     });
     questionsContainer.innerHTML = html;
+    category.innerHTML = `Topic: ${array[0].category}`;
+    questionL.innerHTML = `Questions: ${array.length}`;
     const answerPlate = document.querySelectorAll(".answerPlate");
     displayBtn.onclick = () => {
       answerPlate.forEach((plate) => {
