@@ -10,11 +10,7 @@
 
 <body>
   <div class="container">
-    <div class="link">
-      <h2>Welcome! to <span>Quizly</span></h2>
-      <p>Not registered Yet...?</p>
-      <a href="auth.php">Register</a>
-    </div>
+
     <div class="registrationForm">
       <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
         <input type="text" name="email" class="email" placeholder="Email">
@@ -50,6 +46,11 @@
       };
 
       ?>
+    </div>
+    <div class="link">
+      <h2>Welcome! to <span>Quizly</span></h2>
+      <p>Not registered Yet...?</p>
+      <a href="auth.php">Register</a>
     </div>
   </div>
 </body>

@@ -10,6 +10,11 @@
 
 <body>
   <div class="container">
+    <div class="link">
+      <h2>Welcome!! to <span>Quizly</span></h2>
+      <p>Already registered...?</p>
+      <a href="auth.login.php">Login</a>
+    </div>
     <div class="registrationForm">
       <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
         <input type="text" name="username" class="username" placeholder="username">
@@ -49,11 +54,7 @@
       //if ($conn->query($sql)) echo "Done";
       ?>
     </div>
-    <div class="link">
-      <h2>Welcome!! to <span>Quizly</span></h2>
-      <p>Already registered...?</p>
-      <a href="auth.login.php">Login</a>
-    </div>
+
 
   </div>
 </body>
