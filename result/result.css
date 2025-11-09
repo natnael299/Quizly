@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+}
+
+.container {
+  box-shadow: 0px 0px 6px rgb(9, 92, 120);
+  height: 460px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+.container h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.9rem;
+  color: blue;
+}
+
+.container h3 {
+  font-size: 1.3rem;
+}
+
+.container .states {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.states .correctA {
+  background-color: green;
+  color: white;
+  font-weight: bolder;
+  margin-left: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.states .incorrectA {
+  background-color: red;
+  color: white;
+  font-weight: bolder;
+  margin-right: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.container .precentage {
+  margin-top: 20px;
+  background-color: rgba(0, 128, 0, 0.128);
+  border: 5px solid green;
+  height: 240px;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.container .message {
+  font-size: 1.2rem;
+  margin-top: 25px;
+  border: 2px solid green;
+  background-color: rgba(0, 128, 0, 0.128);
+  padding: 5px 16px;
+  color: blue;
+  border-radius: 5px;
+  font-weight: bold;
+}
