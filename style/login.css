@@ -77,6 +77,12 @@ body {
   gap: 10px;
 }
 
+.registrationForm .errorMessage {
+  border: 3px solid red;
+  background-color: aliceblue;
+  color: #252525;
+}
+
 form input {
   width: 240px;
   height: 36px;

@@ -1,3 +1,7 @@
+<?php session_start();
+$_SESSION["errorM"] = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +10,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style/login.css">
+  <style>
+    .registrationForm .errorMessage {
+      border: 2px solid red;
+      padding: 6px 8px;
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 0.9rem;
+      background-color: aliceblue;
+      color: #252525;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,19 +50,28 @@
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               if (password_verify($password, $row["pass"])) {
+                $_SESSION["errorM"] = "";
                 header("Location: index.html");
               } else {
-                echo "Wrong Username or Password";
+                $_SESSION["errorM"] = "Wrong Username or Password";
               };
             };
           };
         } else {
-          echo "Fill the form correctly!!";
+          $_SESSION["errorM"] = "Fill the form correctly!!";
         };
       };
 
       ?>
+      <?php
+      if (!empty($_SESSION["errorM"])) {
+        echo "<div class='errorMessage'>{$_SESSION["errorM"]}</div>";
+      }
+
+      ?>
+
     </div>
+
     <div class="link">
       <h2>Welcome! to <span>Quizly</span></h2>
       <p>Not registered Yet...?</p>

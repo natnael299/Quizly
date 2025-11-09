@@ -1,3 +1,7 @@
+<?php session_start();
+$_SESSION["errorM"] = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +10,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style/reg.css">
+  <style>
+    .registrationForm .errorMessage {
+      border: 2px solid red;
+      padding: 6px 8px;
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 0.9rem;
+      background-color: aliceblue;
+      color: #252525;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -41,17 +57,26 @@
             $sql = "INSERT INTO chatifyTB (username, email, pass)
             VALUES('$username', '$email', '$hash')";
             if ($conn->query($sql)) {
+              $_SESSION["errorM"] = "";
               header("Location: index.html");
             };
           } else {
-            echo "different password";
+            $_SESSION["errorM"] = "Different passwords, Try Again.";
           };
         } else {
-          echo "Fill the form fully please";
+          $_SESSION["errorM"] = "Fill the form fully please";
         };
       };
       $sql = "";
       //if ($conn->query($sql)) echo "Done";
+      ?>
+
+      <?php
+      if (!empty($_SESSION["errorM"])) {
+        echo "<div class='errorMessage'>
+                {$_SESSION["errorM"]}
+              </div>";
+      };
       ?>
     </div>
 
