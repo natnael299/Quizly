@@ -39,3 +39,24 @@ save_result();
 export function save_result() {
   localStorage.setItem("result", JSON.stringify(resultArray));
 };
+
+
+export function complimentFun(num) {
+  if (num <= 40) {
+    return "Low result!!";
+  }
+  else if (40 > num >= 50) {
+    return "Low result but hopefull!!";
+  }
+  else if (50 > num >= 60) {
+    return "Good result!!";
+  } else if (60 > num >= 70) {
+    return "Commendable result!!";
+  } else if (70 > num >= 80) {
+    return "Increadible result";
+  } else if (80 > num >= 90) {
+    return "Unbelivable result";
+  } else {
+    return "One of a Kind performance!!";
+  };
+};

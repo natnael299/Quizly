@@ -1,4 +1,5 @@
 import { resultArray } from "../utils.js";
+import { complimentFun } from "../utils.js";
 const container = document.querySelector(".container");
 
 container.innerHTML = `
@@ -12,7 +13,7 @@ container.innerHTML = `
     <div class="precentage">
       ${resultArray[0].percentage}%
     </div>
-    <div class="message">commendable result</div>
+    <div class="message">${complimentFun(resultArray[0].percentage)}</div>
    <div class="footer">
     <button class='logoutBtn'>Logout</button>
     <button class='replayBtn'>Replay Quiz</button>
