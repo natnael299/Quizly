@@ -11,6 +11,11 @@ $_SESSION["errorM"] = "";
   <title>Document</title>
   <link rel="stylesheet" href="style/login.css">
   <style>
+    .link h2 {
+      margin-top: 150px;
+      margin-bottom: 10px;
+    }
+
     .registrationForm .errorMessage {
       border: 2px solid red;
       padding: 6px 8px;

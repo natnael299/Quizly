@@ -87,3 +87,26 @@ body {
   border-radius: 5px;
   font-weight: bold;
 }
+
+.container .footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .logoutBtn,
+.footer .replayBtn {
+  padding: 5px 7px;
+  background-color: blue;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  border-radius: 4px;
+  transition: all 0.25s ease-in-out;
+}
+
+.footer .logoutBtn:hover,
+.footer .replayBtn:hover {
+  background-color: green;
+}

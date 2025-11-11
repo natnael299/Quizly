@@ -1,4 +1,6 @@
 import { choice_array } from "../utils.js";
+import { resultArray, save_result } from "../utils.js";
+
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1)); // random index 0 ≤ j ≤ i
@@ -57,7 +59,17 @@ function displayQuestions(question, totalQLength) {
   document.querySelector(".container").innerHTML = html;
   document.querySelector(".nextBtn").addEventListener("click", () => {
     questionCount += 1;
-    if (questionCount === totalQLength) { console.log("Done"); }
+    if (questionCount === totalQLength) {
+      const perc = (score / totalQLength) * 100;
+      resultArray.unshift({
+        type: "multiple",
+        correct: score,
+        incorrect: totalQLength - score,
+        percentage: perc
+      });
+      save_result();
+      window.location.href = "../result/result.html";
+    }
     else { displayQuestions(questionsArray[questionCount], questionsArray.length); };
     const progressBar = document.querySelector(".progress");
     const width = (questionCount / totalQLength) * 100;
