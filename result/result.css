@@ -16,7 +16,7 @@ body {
 
 .container {
   box-shadow: 0px 0px 6px rgb(9, 92, 120);
-  height: 460px;
+  height: 470px;
   width: 450px;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@ body {
   border-radius: 3px;
 }
 
-.container .precentage {
+.container .precentageP {
   margin-top: 20px;
   background-color: rgba(0, 128, 0, 0.128);
   border: 5px solid green;
@@ -77,11 +77,36 @@ body {
   border-radius: 50%;
 }
 
-.container .message {
+.container .precentageF {
+  margin-top: 20px;
+  background-color: rgba(255, 0, 0, 0.326);
+  border: 5px solid red;
+  height: 240px;
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.container .messageP {
   font-size: 1.2rem;
-  margin-top: 25px;
+  margin-top: 15px;
   border: 2px solid green;
   background-color: rgba(0, 128, 0, 0.128);
+  padding: 5px 16px;
+  color: blue;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.container .messageF {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  background-color: rgba(255, 0, 0, 0.326);
+  border: 2px solid red;
   padding: 5px 16px;
   color: blue;
   border-radius: 5px;
@@ -93,6 +118,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .footer .logoutBtn,

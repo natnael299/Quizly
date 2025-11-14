@@ -19,17 +19,38 @@ let score = 0;
 
 init();
 async function init() {
-  await answer(amount, category, difficulty, type);
-  displayQuestions(questionsArray[questionCount], questionsArray.length);
+  questionsArray = await answer(amount, category, difficulty, type);
+  if (questionsArray == null || questionsArray < 1) {
+    notFound();
+  } else {
+    displayQuestions(questionsArray[questionCount], questionsArray.length);
+  }
 };
 
 async function answer(a, c, d, t) {
-  const URLBASE = `https://opentdb.com/api.php?amount=${a}&category=${c}&difficulty=${d}&type=${t}`;
-  const response = await fetch(`${URLBASE}`);
-  const result = await response.json();
-  const questions = result.results;
-  questionsArray = questions;
-  console.log(questionsArray);
+  try {
+    const URLBASE = `https://opentdb.com/api.php?amount=${a}&category=${c}&difficulty=${d}&type=${t}`;
+    const response = await fetch(`${URLBASE}`);
+    const result = await response.json();
+    const questions = result.results;
+    console.log(questionsArray);
+    return questions;
+  } catch (error) {
+    notFound();
+  }
+
+};
+
+function notFound() {
+  const html = `
+        <div class="notFound">
+          <img src="../images/Search.svg">
+          <p class="notFoundMessage">
+            This Section is empty choose another level or another subject.
+          </p>
+       </div>
+      `;
+  document.querySelector(".container").innerHTML = html;
 };
 
 function displayQuestions(question, totalQLength) {
@@ -75,6 +96,7 @@ function displayQuestions(question, totalQLength) {
     const width = (questionCount / totalQLength) * 100;
     progressBar.style.width = `${width}%`;
   });
+
 };
 
 function displayOptions(options, correctAnswer) {

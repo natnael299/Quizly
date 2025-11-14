@@ -143,6 +143,14 @@ body {
   border-radius: inherit;
 }
 
+.notFoundMessage {
+  border: 2px solid red;
+  background-color: white;
+  padding: 5px 7px;
+  color: red;
+  font-size: 1rem;
+}
+
 @media (max-width:700px) {
   .container {
     width: 530px;
